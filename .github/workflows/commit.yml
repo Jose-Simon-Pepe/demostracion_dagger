@@ -1,0 +1,13 @@
+---
+name: on commit
+run-name: on commit
+on:
+    push
+jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: creating environment
+          uses: actions/checkout@v3
+          run: |
+            echo "hola"
