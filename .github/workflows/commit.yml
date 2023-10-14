@@ -23,5 +23,11 @@ jobs:
         - name: run unit-testing
           run: |
             python -m pytest
+            if [ $? -eq 0 ]; then
+              echo "Yey! Unittesting passed. Lets merge"
+              exit 0
+            else
+              echo "Your code is garbage, refusing to merge it"
+              exit 1
 
 
