@@ -29,5 +29,4 @@ jobs:
             else
               echo "Your code is garbage, refusing to merge it"
               exit 1
-
-
+            fi
