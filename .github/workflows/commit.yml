@@ -16,8 +16,12 @@ jobs:
             if [ $? -eq 0 ]; then
               echo "Apt up-to-date"
               sudo apt install python3
+              sudo python3 -m pip install pytest
             else
               echo "Ubuntu is a shit"
             fi
+        - name: run unit-testing
+          run: |
+            python -m pytest
 
 
