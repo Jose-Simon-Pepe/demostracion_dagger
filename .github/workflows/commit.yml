@@ -7,25 +7,25 @@ jobs:
     test:
       runs-on: ubuntu-latest
       container: josepepedev/pytest:latest
-        - name: checkout
       steps:
-          uses: actions/checkout@v3
-        - name: creating environment
-          run: |
-            echo "Lets install dependencies! yey"
-            sudo apt update
-            if [ $? -eq 0 ]; then
-              echo "Apt up-to-date"
-              sudo apt install python3
-              sudo python3 -m pip install pytest
-            else
-              echo "Ubuntu is a shit"
-            fi
+        - uses: actions/checkout@v3
+
+        #- name: creating environment
+        #run: |
+#echo "Lets install dependencies! yey"
+#            sudo apt update
+#            if [ $? -eq 0 ]; then
+#              echo "Apt up-to-date"
+#              sudo apt install python3
+#             sudo python3 -m pip install pytest
+#           else
+#             echo "Ubuntu is a shit"
+#           fi
         - name: run unit-testing
           run: |
             python -m pytest
             if [ $? -eq 0 ]; then
-              echo "Yey! Unittesting passed. Lets merge"
+             echo "Yey! Unittesting passed. Lets merge"
               exit 0
             else
               echo "Your code is garbage, refusing to merge it"
