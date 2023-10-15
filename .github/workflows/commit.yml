@@ -6,7 +6,8 @@ on:
 jobs:
     test:
       runs-on: ubuntu-latest
-      container: josepepedev/pytest:latest
+      container: 
+        image: josepepedev/pytest:latest
       steps:
         - uses: actions/checkout@v3
 
